@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 "Pig",
         };
 
-        adapter = new ArrayAdapter<> (this, android.R.layout.simple_list_item_1, values);
+        adapter = new ArrayAdapter<> (this, R.layout.list_element, R.id.elementText, values);
 
         listView.setAdapter(adapter);
 
