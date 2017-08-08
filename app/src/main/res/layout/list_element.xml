@@ -6,22 +6,31 @@
     android:padding="10dp"
     android:orientation="horizontal">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/elementIcon"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:src="@mipmap/ic_launcher_round" />
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/elementText"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/elementIcon"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/elementButton"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:text="Get notification"
+        style="@style/Widget.AppCompat.Button.Colored"
         />
 
 </android.support.constraint.ConstraintLayout>
