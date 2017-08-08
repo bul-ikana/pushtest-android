@@ -1,4 +1,4 @@
-package pushtest.mecabotware.com.pushtest;
+package pushtest.mecabotware.com.pushtest.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import pushtest.mecabotware.com.pushtest.R;
 
 public class AnimalListAdapter extends ArrayAdapter<String> {
 

@@ -1,8 +1,11 @@
-package pushtest.mecabotware.com.pushtest;
+package pushtest.mecabotware.com.pushtest.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+
+import pushtest.mecabotware.com.pushtest.adapters.AnimalListAdapter;
+import pushtest.mecabotware.com.pushtest.R;
 
 public class MainActivity extends AppCompatActivity {
 
