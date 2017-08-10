@@ -2,7 +2,11 @@ package pushtest.mecabotware.com.pushtest.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import pushtest.mecabotware.com.pushtest.adapters.AnimalListAdapter;
 import pushtest.mecabotware.com.pushtest.R;
@@ -18,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
             "Duck",
             "Pig",
     };
+
+    private TextView tokentxt;
 
     private int[] images = new int[] {
             R.drawable.cat,
@@ -37,5 +43,11 @@ public class MainActivity extends AppCompatActivity {
         adapter = new AnimalListAdapter(this, values, images);
 
         listView.setAdapter(adapter);
+
+        tokentxt = (TextView) findViewById(R.id.tokentxt);
+        tokentxt.setText(FirebaseInstanceId.getInstance().getToken());
+        Log.i("FCM", FirebaseInstanceId.getInstance().getToken());
+
+
     }
 }
