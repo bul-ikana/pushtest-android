@@ -9,7 +9,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import pushtest.mecabotware.com.pushtest.R;
+import java.util.UUID;
 
 import static android.support.v4.app.NotificationCompat.PRIORITY_MAX;
 
@@ -34,7 +34,7 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManager mNotifyMgr =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        mNotifyMgr.notify(1, mBuilder.build());
+        mNotifyMgr.notify(UUID.randomUUID().hashCode(), mBuilder.build());
 
     }
 }
