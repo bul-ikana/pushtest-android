@@ -1,6 +1,7 @@
 package pushtest.mecabotware.com.pushtest.activities;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import pushtest.mecabotware.com.pushtest.R;
@@ -80,11 +82,40 @@ public class TabActivity extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            String text = "";
+            int image = 0;
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+                case 1:
+                    text = "Meow!";
+                    image = R.drawable.cat;
+                    break;
+
+                case 2:
+                    text = "Moo!";
+                    image = R.drawable.cow;
+                    break;
+
+                case 3:
+                    text = "Woof!";
+                    image = R.drawable.dog;
+                    break;
+
+                case 4:
+                    text = "Quack!";
+                    image = R.drawable.duck;
+                    break;
+
+                case 5:
+                    text = "Oink!";
+                    image = R.drawable.pig;
+                    break;
+            }
             View rootView = inflater.inflate(R.layout.fragment_tab, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format));
+            ImageView imageView = rootView.findViewById(R.id.animal_image);
+            imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), image));
+            TextView textView = rootView.findViewById(R.id.section_label);
+            textView.setText(text);
             return rootView;
         }
     }
