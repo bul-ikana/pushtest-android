@@ -1,10 +1,11 @@
 # Pushtest
 
-A simple android app to test push notifications through FCM using a [Laravel app]((https://github.com/bul-ikana/pushtest-laravel)) as the backend.
+A simple android app to test push notifications through FCM using a [Laravel app](https://github.com/bul-ikana/pushtest-laravel) as the backend. When a notification is received, it will open a tabbed activity and send it to the right fragment.
 
 ## Screenshots
 ![](docs/i1.png)
 ![](docs/i2.png)
+![](docs/i3.png)
 
 ## Before we begin
 
