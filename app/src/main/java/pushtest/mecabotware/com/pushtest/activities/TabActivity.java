@@ -1,5 +1,6 @@
 package pushtest.mecabotware.com.pushtest.activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -54,6 +55,35 @@ public class TabActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        Intent i = getIntent();
+        Bundle extras = i.getExtras();
+
+        if(extras != null) {
+            if (extras.getString("animal") != null){
+                switch (extras.getString("animal")) {
+                    case "cat":
+                        tabLayout.getTabAt(0).select();
+                        break;
+
+                    case "cow":
+                        tabLayout.getTabAt(1).select();
+                        break;
+
+                    case "dog":
+                        tabLayout.getTabAt(2).select();
+                        break;
+
+                    case "duck":
+                        tabLayout.getTabAt(3).select();
+                        break;
+
+                    case "pig":
+                        tabLayout.getTabAt(4).select();
+                        break;
+                }
+            }
+        }
     }
 
     /**

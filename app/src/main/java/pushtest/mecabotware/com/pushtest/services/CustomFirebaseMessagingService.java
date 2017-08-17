@@ -26,6 +26,8 @@ public class CustomFirebaseMessagingService extends FirebaseMessagingService {
 
         String click_action = message.getNotification().getClickAction();
         Intent intent = new Intent(click_action);
+        intent.putExtra("push", "true");
+        intent.putExtra("animal", message.getData().get("animal"));
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
